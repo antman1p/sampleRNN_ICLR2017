@@ -3,6 +3,12 @@
 #Usage: sudo ./run_docker_16k <artist name>
 
 artist_name=$1
+
+if [ -z "$1"]
+then
+     artist_name="chunks"
+fi
+
 mkdir -p $artist_name
 chmod 777 $artist_name
 sed -i "s/chunks/$artist_name/g" Dockerfile
